@@ -27,6 +27,8 @@
   /* Вертикальный ритм секций: было очень «воздушно»; чуть плотнее, без потери премиальности */
   --space-section: clamp(3rem, 6.5vw, 5.25rem);
   --max: 1120px;
+  /* Левая колонка навигации по разделам */
+  --side-nav-width: clamp(10rem, 11.5vw, 12.75rem);
 }
 
 *,
@@ -37,6 +39,12 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (max-width: 900px) {
+  html {
+    scroll-padding-bottom: 3.75rem;
+  }
 }
 
 body {
@@ -140,6 +148,122 @@ p {
   color: var(--text-muted);
 }
 
+/* ——— Левая навигация по разделам ——— */
+.section-rail {
+  position: fixed;
+  z-index: 110;
+  left: 0;
+  top: 0;
+  width: var(--side-nav-width);
+  height: 100dvh;
+  padding: 1.35rem 0.85rem 1.35rem 1.1rem;
+  border-right: 1px solid var(--line);
+  background: rgba(233, 228, 218, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 5.75rem;
+  box-shadow: 4px 0 24px rgba(42, 38, 34, 0.04);
+}
+
+.section-rail__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.section-rail__link {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  padding: 0.5rem 0.55rem 0.5rem 0.65rem;
+  margin-left: -0.15rem;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid transparent;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.section-rail__link:hover {
+  color: var(--text);
+  background: rgba(255, 252, 246, 0.65);
+  border-left-color: var(--accent-terra);
+}
+
+.section-rail__link:focus-visible {
+  outline: none;
+  color: var(--text);
+  background: rgba(61, 154, 107, 0.12);
+  border-left-color: var(--btn-primary-from);
+}
+
+.page-content {
+  margin-left: var(--side-nav-width);
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .section-rail {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.45rem 0.65rem calc(0.45rem + env(safe-area-inset-bottom, 0px));
+    border-right: none;
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -6px 28px rgba(42, 38, 34, 0.06);
+  }
+
+  .section-rail__nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.35rem 0.65rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    padding-bottom: 2px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .section-rail__nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .section-rail__link {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    margin-left: 0;
+    padding: 0.4rem 0.65rem;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    font-size: 0.74rem;
+  }
+
+  .section-rail__link:hover,
+  .section-rail__link:focus-visible {
+    border-left-color: transparent;
+    border-bottom-color: var(--accent-terra);
+  }
+
+  .page-content {
+    margin-left: 0;
+    padding-bottom: 3.5rem;
+  }
+}
+
 /* ——— Layout ——— */
 .container {
   width: min(var(--max), calc(100% - 2.5rem));
@@ -177,7 +301,7 @@ section {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
   padding-block: 0.95rem;
   width: min(var(--max), calc(100% - 2.5rem));
@@ -189,46 +313,6 @@ section {
   font-size: 1.35rem;
   font-weight: 700;
   color: var(--text);
-}
-
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 1.15rem;
-  justify-content: flex-end;
-}
-
-.nav a {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  padding: 0.25rem 0;
-  position: relative;
-}
-
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 1px;
-  background: var(--accent-rose);
-  transition: width 0.35s ease;
-}
-
-.nav a:hover {
-  color: var(--text);
-}
-
-.nav a:hover::after {
-  width: 100%;
-}
-
-@media (max-width: 860px) {
-  .nav {
-    display: none;
-  }
 }
 
 /* ——— Buttons ——— */
