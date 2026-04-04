@@ -1,7 +1,7 @@
 /* Татьяна — portfolio | editorial calm luxury + soft paper accent */
 :root {
-  --bg: #f4f1eb;
-  --bg-paper: #faf8f4;
+  --bg: #e9e4da;
+  --bg-paper: #faf7f0;
   --text: #1f1f1f;
   --text-muted: #5c5854;
   --accent-olive: #6f7d64;
@@ -9,6 +9,12 @@
   --accent-terra: #b87a68;
   --accent-rose: #c9a3a3;
   --accent-blush: #e8d4d4;
+  /* Яркие кнопки в тёплой гамме «бумага + травяной / терракота» */
+  --btn-primary-from: #3d9a6b;
+  --btn-primary-to: #2a7a52;
+  --btn-primary-text: #fffef9;
+  --btn-ghost-fill: rgba(255, 252, 246, 0.88);
+  --btn-ghost-border: rgba(61, 122, 82, 0.42);
   --line: rgba(31, 31, 31, 0.08);
   --shadow-soft: 0 24px 60px rgba(42, 38, 34, 0.07);
   --shadow-card: 0 8px 32px rgba(42, 38, 34, 0.06);
@@ -39,10 +45,32 @@ body {
   font-size: 1rem;
   line-height: 1.65;
   color: var(--text);
-  background: var(--bg);
+  background-color: var(--bg);
+  /* «Мятая бумага»: крупные блики/тени складок + мелкое зерно */
   background-image:
-    radial-gradient(ellipse 120% 80% at 100% -20%, rgba(201, 163, 163, 0.12), transparent 50%),
-    radial-gradient(ellipse 80% 50% at 0% 100%, rgba(111, 125, 100, 0.08), transparent 45%);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)' opacity='0.14'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 85% 55% at 12% 8%, rgba(255, 252, 246, 0.95), transparent 52%),
+    radial-gradient(ellipse 70% 45% at 92% 18%, rgba(255, 255, 255, 0.55), transparent 48%),
+    radial-gradient(ellipse 55% 40% at 78% 88%, rgba(0, 0, 0, 0.045), transparent 50%),
+    radial-gradient(ellipse 90% 60% at 0% 72%, rgba(201, 163, 163, 0.09), transparent 55%),
+    radial-gradient(ellipse 65% 50% at 55% 42%, rgba(111, 125, 100, 0.06), transparent 58%),
+    linear-gradient(118deg, rgba(255, 255, 255, 0.22) 0%, transparent 38%),
+    linear-gradient(212deg, rgba(42, 38, 34, 0.035) 0%, transparent 42%),
+    linear-gradient(168deg, transparent 0%, rgba(232, 212, 212, 0.08) 100%),
+    radial-gradient(ellipse 120% 80% at 100% -20%, rgba(201, 163, 163, 0.14), transparent 50%),
+    radial-gradient(ellipse 80% 50% at 0% 100%, rgba(111, 125, 100, 0.1), transparent 45%);
+  background-size:
+    180px 180px,
+    auto,
+    auto,
+    auto,
+    auto,
+    auto,
+    auto,
+    auto,
+    auto,
+    auto,
+    auto;
   overflow-x: hidden;
 }
 
@@ -128,7 +156,7 @@ section {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(244, 241, 235, 0.78);
+  background: rgba(233, 228, 218, 0.82);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
@@ -223,26 +251,32 @@ section {
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, var(--accent-slate) 0%, #4a5560 100%);
-  color: #f8f6f3;
-  box-shadow: 0 6px 24px rgba(90, 107, 120, 0.28);
+  background: linear-gradient(145deg, var(--btn-primary-from) 0%, var(--btn-primary-to) 100%);
+  color: var(--btn-primary-text);
+  box-shadow:
+    0 4px 0 rgba(32, 92, 58, 0.35),
+    0 8px 28px rgba(45, 122, 82, 0.38);
 }
 
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(90, 107, 120, 0.35);
+  filter: brightness(1.06);
+  box-shadow:
+    0 5px 0 rgba(32, 92, 58, 0.32),
+    0 14px 36px rgba(45, 122, 82, 0.45);
 }
 
 .btn--ghost {
-  background: rgba(255, 255, 255, 0.55);
+  background: var(--btn-ghost-fill);
   color: var(--text);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-card);
+  border: 1.5px solid var(--btn-ghost-border);
+  box-shadow: 0 4px 18px rgba(42, 38, 34, 0.06);
 }
 
 .btn--ghost:hover {
-  background: #fff;
-  border-color: rgba(201, 163, 163, 0.35);
+  background: #fffef9;
+  border-color: rgba(184, 122, 104, 0.55);
+  box-shadow: 0 8px 26px rgba(61, 122, 82, 0.12);
   transform: translateY(-2px);
 }
 
@@ -970,15 +1004,27 @@ section {
 }
 
 .cta-band .btn--primary {
-  background: #fff;
-  color: var(--accent-slate);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(145deg, #e8f5ec 0%, #c8e6d4 100%);
+  color: #1a4d2e;
+  box-shadow:
+    0 4px 0 rgba(26, 77, 46, 0.2),
+    0 10px 32px rgba(0, 0, 0, 0.18);
+}
+
+.cta-band .btn--primary:hover {
+  filter: brightness(1.05);
 }
 
 .cta-band .btn--ghost {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.12);
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.cta-band .btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 /* ——— Contacts / footer ——— */
