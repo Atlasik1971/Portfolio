@@ -21,6 +21,7 @@
         <a href="#process">Подход</a>
         <a href="#projects">Проекты</a>
         <a href="#why">Почему я</a>
+        <a href="#testimonials">Отзывы</a>
         <a href="#contacts">Контакты</a>
       </nav>
     </div>
@@ -97,48 +98,50 @@
       </div>
     </section>
 
-    <section id="services" class="reveal">
+    <section id="services" class="services-section reveal">
       <div class="container">
-        <span class="section-label">Услуги</span>
-        <h2>Что я делаю</h2>
-        <div class="services-grid">
-          <article class="card">
+        <header class="services-intro">
+          <span class="section-label">Услуги</span>
+          <h2>Что я делаю</h2>
+        </header>
+        <div class="services-grid services-grid--centered">
+          <article class="card service-card">
             <div class="card__meta">01</div>
             <h3>Лендинги</h3>
             <p>Сайты, которые не просто «есть», а собирают внимание, держат ритм и ведут человека по смыслу.</p>
           </article>
-          <article class="card">
+          <article class="card service-card">
             <div class="card__meta">02</div>
             <h3>Портфолио и личные сайты</h3>
             <p>Страницы, которые показывают не только работы, но и стиль, характер и уровень.</p>
           </article>
-          <article class="card">
+          <article class="card service-card">
             <div class="card__meta">03</div>
             <h3>Визуальные концепты</h3>
             <p>Когда нужен не просто сайт, а ощущение: атмосфера, характер, настроение, подача.</p>
           </article>
-          <article class="card">
+          <article class="card service-card">
             <div class="card__meta">04</div>
             <h3>AI × Web</h3>
             <p>Использую нейросети как инструмент ускорения и усиления идей, а не как замену мышлению.</p>
           </article>
-          <article class="card">
+          <article class="card service-card">
             <div class="card__meta">05</div>
             <h3>UX и структура</h3>
             <p>Продумываю, как человек читает, куда смотрит, где теряется и где принимает решение.</p>
           </article>
-          <article class="card">
+          <article class="card service-card">
             <div class="card__meta">06</div>
             <h3>Быстрый запуск</h3>
             <p>Могу собрать сильную первую версию быстро, без месяцев бесконечных согласований.</p>
           </article>
-          <article class="card" style="grid-column: 1 / -1; max-width: 100%;">
+          <article class="card service-card card--services-feature">
             <div class="card__meta">07</div>
             <h3>Creative packaging</h3>
             <p>Упаковываю проект так, чтобы он выглядел дороже, ощущался цельнее и выделялся визуально.</p>
           </article>
         </div>
-        <div class="hero-actions reveal reveal-delay-2" style="margin-top: 2.5rem; justify-content: flex-start;">
+        <div class="services-cta hero-actions reveal reveal-delay-2">
           <a href="#contacts" class="btn btn--primary">Обсудить задачу</a>
         </div>
       </div>
@@ -279,6 +282,286 @@
       </div>
     </section>
 
+    <section id="testimonials" class="testimonials-section reveal" aria-labelledby="testimonials-title">
+      <div class="container">
+        <header class="testimonials-intro">
+          <span class="testimonials-intro__badge">Отзывы</span>
+          <h2 id="testimonials-title">Что говорят клиенты</h2>
+          <p class="testimonials-intro__lead">
+            Коротко о совместной работе: сроки, подача и ощущение от готовой страницы.
+          </p>
+        </header>
+        <div class="testimonials-marquee" role="region" aria-label="Лента отзывов">
+          <div class="testimonials-columns">
+            <!-- Колонка 1 -->
+            <div class="testimonials-column">
+              <div class="testimonials-column__track" style="--testimonials-duration: 15s">
+                <div class="testimonials-column__chunk">
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «За две недели получили лендинг, который не стыдно показать инвесторам. Структура ясная, визуал спокойный и дорогой.»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img
+                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=128&amp;h=128&amp;fit=crop&amp;crop=faces"
+                        alt=""
+                        width="40"
+                        height="40"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div>
+                        <div class="testimonial-card__name">Екатерина М.</div>
+                        <div class="testimonial-card__role">Основательница edtech-проекта</div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Редко когда и код, и вкус совпадают в одном человеке. Сайт передаёт характер бренда, заявки стали стабильнее.»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=128&amp;h=128&amp;fit=crop&amp;crop=faces"
+                        alt=""
+                        width="40"
+                        height="40"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div>
+                        <div class="testimonial-card__name">Андрей В.</div>
+                        <div class="testimonial-card__role">Digital-продюсер</div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Понравилось, что сначала выстроили смысл и сценарий, потом уже визуал. Ничего лишнего на странице нет.»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img
+                        src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=128&amp;h=128&amp;fit=crop&amp;crop=faces"
+                        alt=""
+                        width="40"
+                        height="40"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div>
+                        <div class="testimonial-card__name">Марина С.</div>
+                        <div class="testimonial-card__role">Маркетолог, B2B</div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="testimonials-column__chunk" aria-hidden="true">
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «За две недели получили лендинг, который не стыдно показать инвесторам. Структура ясная, визуал спокойный и дорогой.»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=128&amp;h=128&amp;fit=crop&amp;crop=faces" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                      <div>
+                        <div class="testimonial-card__name">Екатерина М.</div>
+                        <div class="testimonial-card__role">Основательница edtech-проекта</div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Редко когда и код, и вкус совпадают в одном человеке. Сайт передаёт характер бренда, заявки стали стабильнее.»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=128&amp;h=128&amp;fit=crop&amp;crop=faces" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                      <div>
+                        <div class="testimonial-card__name">Андрей В.</div>
+                        <div class="testimonial-card__role">Digital-продюсер</div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Понравилось, что сначала выстроили смысл и сценарий, потом уже визуал. Ничего лишнего на странице нет.»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=128&amp;h=128&amp;fit=crop&amp;crop=faces" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                      <div>
+                        <div class="testimonial-card__name">Марина С.</div>
+                        <div class="testimonial-card__role">Маркетолог, B2B</div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <!-- Колонка 2 -->
+            <div class="testimonials-column testimonials-column--md">
+              <div class="testimonials-column__track" style="--testimonials-duration: 19s">
+                <div class="testimonials-column__chunk">
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Нужен был не шаблон, а ощущение премиальности — получили ровно это. Правок по мелочи было минимум.»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=128&amp;h=128&amp;fit=crop&amp;crop=faces" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                      <div>
+                        <div class="testimonial-card__name">Дмитрий К.</div>
+                        <div class="testimonial-card__role">Эксперт, личный бренд</div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Быстрый старт без бесконечных согласований. Всё по делу: от структуры до финального текстового слоя.»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=128&amp;h=128&amp;fit=crop&amp;crop=faces" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                      <div>
+                        <div class="testimonial-card__name">Ольга П.</div>
+                        <div class="testimonial-card__role">Руководитель студии</div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Страница под продукт с AI — и выглядит современно, и не перегружена. Конверсия в демо выросла.»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&amp;h=128&amp;fit=crop&amp;crop=faces" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                      <div>
+                        <div class="testimonial-card__name">Илья Н.</div>
+                        <div class="testimonial-card__role">Сооснователь SaaS</div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="testimonials-column__chunk" aria-hidden="true">
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Нужен был не шаблон, а ощущение премиальности — получили ровно это. Правок по мелочи было минимум.»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=128&amp;h=128&amp;fit=crop&amp;crop=faces" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                      <div>
+                        <div class="testimonial-card__name">Дмитрий К.</div>
+                        <div class="testimonial-card__role">Эксперт, личный бренд</div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Быстрый старт без бесконечных согласований. Всё по делу: от структуры до финального текстового слоя.»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=128&amp;h=128&amp;fit=crop&amp;crop=faces" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                      <div>
+                        <div class="testimonial-card__name">Ольга П.</div>
+                        <div class="testimonial-card__role">Руководитель студии</div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Страница под продукт с AI — и выглядит современно, и не перегружена. Конверсия в демо выросла.»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&amp;h=128&amp;fit=crop&amp;crop=faces" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                      <div>
+                        <div class="testimonial-card__name">Илья Н.</div>
+                        <div class="testimonial-card__role">Сооснователь SaaS</div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <!-- Колонка 3 -->
+            <div class="testimonials-column testimonials-column--lg">
+              <div class="testimonials-column__track" style="--testimonials-duration: 17s">
+                <div class="testimonials-column__chunk">
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Портфолио наконец отражает уровень работ. Клиенты стали чаще приходить уже «с настроем».»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=128&amp;h=128&amp;fit=crop&amp;crop=faces" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                      <div>
+                        <div class="testimonial-card__name">Анна Л.</div>
+                        <div class="testimonial-card__role">Креативный директор</div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Собрали промо под воронку за короткий срок — тексты, блоки, аккуратные CTA. Работает без сюрпризов.»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=128&amp;h=128&amp;fit=crop&amp;crop=faces" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                      <div>
+                        <div class="testimonial-card__name">Сергей Т.</div>
+                        <div class="testimonial-card__role">Performance-маркетолог</div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Чувствуется насмотренность: ни одного «как у всех». Рекомендую, если важна подача, а не только галочка «сайт есть».»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=128&amp;h=128&amp;fit=crop&amp;crop=faces" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                      <div>
+                        <div class="testimonial-card__name">Виктория Р.</div>
+                        <div class="testimonial-card__role">PM, digital-агентство</div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="testimonials-column__chunk" aria-hidden="true">
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Портфолио наконец отражает уровень работ. Клиенты стали чаще приходить уже «с настроем».»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=128&amp;h=128&amp;fit=crop&amp;crop=faces" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                      <div>
+                        <div class="testimonial-card__name">Анна Л.</div>
+                        <div class="testimonial-card__role">Креативный директор</div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Собрали промо под воронку за короткий срок — тексты, блоки, аккуратные CTA. Работает без сюрпризов.»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=128&amp;h=128&amp;fit=crop&amp;crop=faces" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                      <div>
+                        <div class="testimonial-card__name">Сергей Т.</div>
+                        <div class="testimonial-card__role">Performance-маркетолог</div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="testimonial-card">
+                    <p class="testimonial-card__text">
+                      «Чувствуется насмотренность: ни одного «как у всех». Рекомендую, если важна подача, а не только галочка «сайт есть».»
+                    </p>
+                    <div class="testimonial-card__author">
+                      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=128&amp;h=128&amp;fit=crop&amp;crop=faces" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                      <div>
+                        <div class="testimonial-card__name">Виктория Р.</div>
+                        <div class="testimonial-card__role">PM, digital-агентство</div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="tools" class="reveal">
       <div class="container">
         <span class="section-label">Стек</span>
@@ -343,20 +626,75 @@
       <div class="container">
         <span class="section-label">Связь</span>
         <h2>Контакты</h2>
-        <dl class="contact-card">
-          <div>
-            <dt>Telegram</dt>
-            <dd><a href="https://t.me/yourname">@yourname</a></dd>
+        <p class="contacts-lead">
+          Готова обсудить задачу: напишите в Telegram, на почту или отправьте заявку через форму — отвечу в ближайшее время.
+        </p>
+        <div class="contacts-layout">
+          <dl class="contact-card contact-card--stack">
+            <div>
+              <dt>Telegram</dt>
+              <dd><a href="https://t.me/yourname">@yourname</a></dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:hello@yourmail.com">hello@yourmail.com</a></dd>
+            </div>
+            <div>
+              <dt>Соцсети и работы</dt>
+              <dd>Behance / Dribbble / GitHub / Notion / Instagram</dd>
+            </div>
+          </dl>
+          <!--
+            Форма: FormSubmit (бесплатно). Замените hello@yourmail.com в action на вашу почту
+            (должна совпадать с твердой почтой выше). После первой отправки подтвердите письмо от FormSubmit.
+            Альтернативы: Formspree, Getform, Web3Forms — смените только action и скрытые поля по их документации.
+          -->
+          <div class="contact-form-panel">
+            <h3 class="contacts-form-title">Написать мне</h3>
+            <p class="contacts-form-hint">
+              Одна кнопка — и заявка улетает на почту. Кратко опишите задачу или ссылку на референсы.
+            </p>
+            <form
+              class="contact-form"
+              action="https://formsubmit.co/hello@yourmail.com"
+              method="POST"
+              accept-charset="UTF-8"
+            >
+              <input type="hidden" name="_subject" value="Заявка с портфолио (сайт)" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="text" name="_gotcha" class="contact-form__honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+              <div class="contact-form__field">
+                <label for="contact-name">Имя</label>
+                <input id="contact-name" type="text" name="name" required placeholder="Как к вам обращаться" autocomplete="name" />
+              </div>
+              <div class="contact-form__field">
+                <label for="contact-email">Email</label>
+                <input
+                  id="contact-email"
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                />
+              </div>
+              <div class="contact-form__field">
+                <label for="contact-message">Сообщение</label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  required
+                  rows="5"
+                  placeholder="Что нужно сделать, сроки, бюджет — как удобно"
+                ></textarea>
+              </div>
+              <div class="contact-form__actions">
+                <button type="submit" class="btn btn--primary btn--block">Отправить заявку</button>
+              </div>
+            </form>
           </div>
-          <div>
-            <dt>Email</dt>
-            <dd><a href="mailto:hello@yourmail.com">hello@yourmail.com</a></dd>
-          </div>
-          <div>
-            <dt>Соцсети и работы</dt>
-            <dd>Behance / Dribbble / GitHub / Notion / Instagram</dd>
-          </div>
-        </dl>
+        </div>
         <p class="footer-note">© Татьяна · Vibe Coding · Портфолио</p>
       </div>
     </section>
