@@ -18,7 +18,8 @@
   --font-hero: "Alegreya", "Times New Roman", Georgia, serif;
   --font-body: "Manrope", system-ui, sans-serif;
   --font-script: "Great Vibes", cursive;
-  --space-section: clamp(4rem, 10vw, 7.5rem);
+  /* Вертикальный ритм секций: было очень «воздушно»; чуть плотнее, без потери премиальности */
+  --space-section: clamp(3rem, 6.5vw, 5.25rem);
   --max: 1120px;
 }
 
@@ -254,8 +255,8 @@ section {
 
 /* ——— Hero ——— */
 .hero {
-  padding-block: clamp(3rem, 8vw, 5rem) var(--space-section);
-  min-height: min(85vh, 780px);
+  padding-block: clamp(2.5rem, 6vw, 4rem) var(--space-section);
+  min-height: min(82vh, 720px);
   display: flex;
   align-items: center;
 }
@@ -1175,7 +1176,7 @@ section {
 
 /* ——— Отзывы (колонки с прокруткой, аналог motion / react-bits) ——— */
 .testimonials-section {
-  padding-block: clamp(3rem, 8vw, 5rem);
+  padding-block: clamp(2.5rem, 6vw, 4.25rem);
   overflow: hidden;
 }
 
