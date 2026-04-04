@@ -689,6 +689,20 @@
                   placeholder="Что нужно сделать, сроки, бюджет — как удобно"
                 ></textarea>
               </div>
+              <div class="contact-form__consent">
+                <input
+                  type="checkbox"
+                  id="contact-consent"
+                  name="consent_personal_data"
+                  value="да"
+                  required
+                />
+                <label for="contact-consent" class="contact-form__consent-label">
+                  Согласен(на) на
+                  <a href="privacy.html" target="_blank" rel="noopener noreferrer">обработку персональных данных</a>
+                  для ответа на заявку (ФЗ-152). Без этой отметки отправка недоступна.
+                </label>
+              </div>
               <div class="contact-form__actions">
                 <button type="submit" class="btn btn--primary btn--block">Отправить заявку</button>
               </div>
