@@ -543,6 +543,7 @@ section {
     var(--shadow-soft),
     0 0 0 1px rgba(255, 255, 255, 0.95) inset,
     0 1px 0 rgba(201, 163, 163, 0.12);
+  overflow: visible;
 }
 
 .paper-sheet--hero::before {
@@ -619,31 +620,26 @@ section {
     inset 0 -20px 40px rgba(184, 122, 104, 0.06);
 }
 
-/* Готовое фото с «рваной бумагой» в кадре — без повторного clip-path */
-.hero-photo-asset {
-  position: relative;
-  max-width: 100%;
+/* React ProfileCard в рамке «листа» */
+.hero-profile-mount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   margin-inline: auto;
   animation: hero-float 7s ease-in-out infinite;
-  filter: drop-shadow(0 14px 28px rgba(34, 30, 28, 0.1));
+  filter: drop-shadow(0 14px 28px rgba(34, 30, 28, 0.12));
 }
 
-.hero-photo-asset::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 2px;
-  pointer-events: none;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+.hero-profile-mount .pc-card-wrapper {
+  width: min(100%, 280px);
+  max-width: 100%;
 }
 
-.hero-photo-asset img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 2px;
-  vertical-align: middle;
-  background: #faf8f4;
+@media (max-width: 900px) {
+  .hero-profile-mount .pc-card-wrapper {
+    width: min(100%, 260px);
+  }
 }
 
 .badges {
