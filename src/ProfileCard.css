@@ -34,6 +34,12 @@
   touch-action: none;
 }
 
+@media (max-width: 900px) {
+  .pc-card-wrapper {
+    touch-action: pan-y pinch-zoom;
+  }
+}
+
 .pc-behind {
   position: absolute;
   inset: 0;
