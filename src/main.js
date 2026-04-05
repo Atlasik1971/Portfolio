@@ -1,11 +1,13 @@
 import "../hero-typewriter.js";
+import { initProjectModals } from "./projects-modal.js";
 
-function bootHeroTypewriter() {
+function boot() {
   if (typeof window.initHeroTypewriter === "function") window.initHeroTypewriter();
+  initProjectModals();
 }
 
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", bootHeroTypewriter);
+  document.addEventListener("DOMContentLoaded", boot);
 } else {
-  bootHeroTypewriter();
+  boot();
 }

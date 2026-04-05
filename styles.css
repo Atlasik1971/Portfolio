@@ -994,6 +994,184 @@ section {
   color: var(--accent-terra);
 }
 
+.project-card--clickable {
+  cursor: pointer;
+}
+
+.project-card--clickable:focus {
+  outline: none;
+}
+
+.project-card--clickable:focus-visible {
+  outline: 2px solid var(--btn-primary-from);
+  outline-offset: 3px;
+}
+
+.project-card__category {
+  margin: 0 0 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-slate);
+  line-height: 1.35;
+}
+
+.project-card__teaser {
+  margin: 0 0 0.25rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* ——— Модальное окно кейса ——— */
+body.project-modal-open {
+  overflow: hidden;
+}
+
+.project-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(1rem, env(safe-area-inset-top, 0px)) max(1rem, env(safe-area-inset-right, 0px))
+    max(1rem, env(safe-area-inset-bottom, 0px)) max(1rem, env(safe-area-inset-left, 0px));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.project-modal.is-open {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.project-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(31, 31, 31, 0.48);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.project-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 28.5rem);
+  max-height: min(88vh, 42rem);
+  overflow-y: auto;
+  margin: auto;
+  padding: clamp(1.35rem, 4vw, 2rem) clamp(1.25rem, 3.5vw, 1.85rem) 1.75rem;
+  background: linear-gradient(165deg, #fffcfa 0%, #f5f0eb 100%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+  transform: translateY(14px) scale(0.97);
+  opacity: 0;
+  transition:
+    transform 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+  -webkit-overflow-scrolling: touch;
+}
+
+.project-modal.is-open .project-modal__panel {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.project-modal__close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255, 252, 246, 0.9);
+  color: var(--text-muted);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.project-modal__close:hover {
+  color: var(--text);
+  background: #fff;
+  border-color: rgba(201, 163, 163, 0.35);
+}
+
+.project-modal__eyebrow {
+  margin: 0 2.5rem 0.5rem 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-olive);
+}
+
+.project-modal__title {
+  margin: 0 2.5rem 1.25rem 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 3.5vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.project-modal__sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.project-modal__block {
+  margin: 0;
+  padding: 1rem 1.05rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--line);
+}
+
+.project-modal__block-title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-terra);
+}
+
+.project-modal__text {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-modal,
+  .project-modal__panel {
+    transition: none;
+  }
+
+  .project-modal.is-open .project-modal__panel {
+    transform: none;
+    opacity: 1;
+  }
+}
+
 .split-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1373,10 +1551,9 @@ section {
   border-top: 1px solid var(--line);
 }
 
-/* ——— Отзывы (колонки с прокруткой, аналог motion / react-bits) ——— */
+/* ——— Отзывы ——— */
 .testimonials-section {
   padding-block: clamp(2.5rem, 6vw, 4.25rem);
-  overflow: hidden;
 }
 
 .testimonials-intro {
@@ -1410,84 +1587,24 @@ section {
   line-height: 1.55;
 }
 
-.testimonials-marquee {
-  max-height: min(740px, 72vh);
-  overflow: hidden;
-  margin-inline: auto;
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 78%, transparent);
-  mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 78%, transparent);
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.testimonials-columns {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: clamp(1rem, 2.5vw, 1.5rem);
-}
-
-.testimonials-column {
-  flex: 0 0 auto;
-  width: min(300px, 82vw);
-  overflow: hidden;
-}
-
-.testimonials-column--md {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .testimonials-column--md {
-    display: block;
+@media (min-width: 1000px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-.testimonials-column--lg {
-  display: none;
-}
-
-@media (min-width: 1100px) {
-  .testimonials-column--lg {
-    display: block;
-  }
-}
-
-.testimonials-column__track {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding-bottom: 1.5rem;
-  animation: testimonials-column-scroll var(--testimonials-duration, 18s) linear infinite;
-  will-change: transform;
-}
-
-.testimonials-column__chunk {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-@keyframes testimonials-column-scroll {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-50%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .testimonials-column__track {
-    animation: none;
-  }
-
-  .testimonials-column__chunk[aria-hidden="true"] {
-    display: none;
-  }
-
-  .testimonials-marquee {
-    max-height: none;
-    mask-image: none;
-    -webkit-mask-image: none;
+@media (max-width: 640px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1631,14 +1748,6 @@ section {
   .cta-actions .btn {
     width: 100%;
     justify-content: center;
-  }
-
-  .testimonials-marquee {
-    max-height: min(520px, 58vh);
-  }
-
-  .testimonials-column {
-    width: min(280px, calc(100vw - 2.5rem));
   }
 
   .contact-card,
