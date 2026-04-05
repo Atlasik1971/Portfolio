@@ -197,6 +197,18 @@ p {
   border-left-color: var(--btn-primary-from);
 }
 
+.section-rail__link--contacts {
+  color: var(--text);
+  font-weight: 700;
+  background: rgba(61, 154, 107, 0.14);
+  border-left-color: var(--btn-primary-from);
+}
+
+.section-rail__link--contacts:hover {
+  background: rgba(61, 154, 107, 0.22);
+  border-left-color: var(--btn-primary-to);
+}
+
 .page-content {
   margin-left: var(--side-nav-width);
   min-width: 0;
@@ -269,6 +281,18 @@ p {
   .section-rail__link:focus-visible {
     border-left-color: transparent;
     border-bottom-color: var(--accent-terra);
+  }
+
+  .section-rail__link--contacts {
+    border-left: none;
+    border-bottom: 2px solid var(--btn-primary-from);
+    background: rgba(61, 154, 107, 0.18);
+  }
+
+  .section-rail__link--contacts:hover,
+  .section-rail__link--contacts:focus-visible {
+    border-bottom-color: var(--btn-primary-to);
+    background: rgba(61, 154, 107, 0.26);
   }
 
   .page-content {
@@ -1148,6 +1172,24 @@ section {
   margin: 0 0 1.75rem;
   font-size: 1.02rem;
   color: var(--text-muted);
+}
+
+.contacts-lead--highlight {
+  max-width: min(52ch, 100%);
+  margin-bottom: 1.85rem;
+  padding: 1.05rem 1.2rem 1.1rem 1.15rem;
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--btn-primary-from);
+  background: linear-gradient(
+    105deg,
+    rgba(61, 154, 107, 0.12) 0%,
+    rgba(255, 252, 246, 0.92) 42%,
+    rgba(232, 212, 212, 0.12) 100%
+  );
+  box-shadow: 0 2px 16px rgba(42, 38, 34, 0.05);
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.55;
 }
 
 .contacts-layout {
